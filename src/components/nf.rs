@@ -1,8 +1,12 @@
 use leptos::*;
+use leptos_meta::*;
 
 /// 404 - Not Found
 #[component]
 pub fn NotFound() -> impl IntoView {
+    // provide_meta_context();
+
+    
     // set an HTTP status code 404
     // this is feature gated because it can only be done during
     // initial server-side rendering
@@ -18,6 +22,7 @@ pub fn NotFound() -> impl IntoView {
     }
 
     view! {
+        <Title text="Page Not Found" />
         <h1>"Not Found"</h1>
     }
 }

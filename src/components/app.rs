@@ -1,9 +1,6 @@
 use leptos::*;
 use leptos_meta::*;
-use leptos_router::*;
-
-use super::hp::HomePage;
-use super::nf::NotFound;
+use crate::routing::routes::Routing;
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -18,14 +15,7 @@ pub fn App() -> impl IntoView {
         // sets the document title
         <Title text="Welcome to Leptos"/>
 
-        // content for this welcome page
-        <Router>
-            <main>
-                <Routes>
-                    <Route path="" view=HomePage/>
-                    <Route path="/*any" view=NotFound/>
-                </Routes>
-            </main>
-        </Router>
+        // {Routing()}
+        <Routing />
     }
 }

@@ -1,5 +1,5 @@
 pub mod components;
-use crate::components::app::*;
+pub mod routing;
 
 #[cfg(feature = "ssr")]
 #[actix_web::main]
@@ -8,6 +8,7 @@ async fn main() -> std::io::Result<()> {
     use actix_web::*;
     use leptos::*;
     use leptos_actix::{generate_route_list, LeptosRoutes};
+    use components::app::*;
 
     let conf = get_configuration(None).await.unwrap();
     let addr = conf.leptos_options.site_addr;
